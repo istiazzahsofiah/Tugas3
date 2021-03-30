@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title> Kalkulator</title>
+</head>
+<body style="background-image: url(fig6.png); color: white;">
+
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+
+	<h2><font face = "Lucida Bright" > &nbsp; &nbsp; &nbsp;1. Volume Kerucut </font></h2>
+	<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Masukan Jari-jari Kerucut <input type="number" name="Jari-jari" id="jari1"></p>
+	
+	<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Masukan Tinggi Kerucut <input type="number" name="Tinggi" id = "tinggi1"><br></p>
+	
+	<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Hasil Volume Kerucut <button onclick="kerucut()"> Hitung Volume </button><br></p>
+	
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Hasil : <span id = "hasil1"></span>
+	<br>
+	<h2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Luas Permukaan Kerucut</h2>
+	<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Masukan Jari-jari Kerucut  <input type="number" name="Jari-jari" id="jk"></p>
+	
+	<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Masukan Tinggi Kerucut  <input type="number" name="Tinggi" id = "tk"><br></p>
+	
+	<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Hasil Luas Kerucut  <button onclick="kerucut()"> Hitung Luas </button><br></p>
+	
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Hasil : <span id = "hasil2"></span>
+	<script>
+		var hs=document.getElementById('hasil1');
+		var hsk = document.getElementById('hasil2');
+		function kerucut(){
+			var js = jari1.value;
+				ts = tinggi1.value;
+				hs.innerHTML = 3.14*Math.pow(js, 2)*ts;
+			var jsk = jk.value;
+				tsk = tk.value;
+				hsk.innerHTML = 3.14*jsk*(jsk + Math.sqrt(Math.pow(jsk, 2)+ Math.pow(tsk, 2)));
+		}
+	</script>
+
+	<br>
+	<br>
+
+	<h2>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2. Volume Silinder</h2>
+	<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Masukan Jari jari Silinder <input type="number"  id="jari3"></p>
+	
+	<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Masukan tinggi Silinder  <input type="number"  id="tinggi3"></p>
+	
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <input type="button" onclick="tabung()" value="Hasil Volume">
+	<br>
+	<br>
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Hasil : <span id="hasil4"></span>
+	<br>
+	<br>
+	<h2>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Luas Permukaan Silinder</h2>
+	<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Masukan Jari-jari Silinder  <input type="number" id="jaritabung"></p>
+	<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Masukan tinggi silinder  <input type="number" id="tinggitabung"></p>
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <input type="button" onclick="tabung()" value="Hasil Luas">
+	<br>
+	<br>
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Hasil : <span id="hasiltabung"></span>
+	<br>
+	<br>
+
+	<script>
+		var hasilasli=document.getElementById('hasil4');
+		var hasilaslitabung=document.getElementById('hasiltabung');
+
+		function tabung() {
+			var jariasli=jari3.value;
+				tinggiasli=tinggi3.value;
+
+			hasilasli.innerHTML=2*3.14*(parseFloat(jariasli)+parseFloat(tinggiasli));
+
+			var jariaslitabung=jaritabung.value;
+			tinggiaslitabung=tinggitabung.value;
+
+			hasilaslitabung.innerHTML=3.14*Math.pow(jariaslitabung, 2)*tinggiaslitabung;
+		}
+	</script>
+
+	<h2>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3. Volume Bola</h2>
+
+	<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Masukan Jari-jari Bola <input type="number" name="Jari-jari Bola" id="jari"></p>
+	
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <input type="button" onclick="bola()" value="Hitung Volume Bola"><br>
+	<br>
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Hasil : <span id = "hasil"></span>
+	<br>
+	<h2>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Luas Permukaan Bola</h2>
+	<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Masukan Jari-jari Bola <input type="number" name="Jari-jari Bola" id="jaribola"></p>
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <input type="button" onclick="bola()" value="Hitung luas Bola"><br>
+	<br>
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Hasil : <span id = "hasilbola"></span>
+
+	<script>
+		var hasilpasti= document.getElementById('hasil');
+		var hasilpastibola = document.getElementById('hasilbola');
+		function bola() {
+			var jariasli = jari.value;
+			hasilpasti.innerHTML= 4*3.14*Math.pow(jariasli, 2);
+
+			var jariaslibola = jari.value;
+			hasilpastibola.innerHTML= (4*3.14*Math.pow(jariaslibola, 3))/3;
+		}
+	</script>
+
+<br>
+<br>
+<br>
+	
+
+</body>
+</html>
